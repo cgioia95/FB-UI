@@ -1,7 +1,7 @@
 node_modules/
 *.env
 dist/
-
+.DS_Store
 # Terraform files
 .terraform/
 .terraform.lcok.hcl

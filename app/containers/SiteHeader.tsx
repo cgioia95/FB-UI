@@ -1,5 +1,6 @@
-import React from 'react';
 import { AppBar, Box, Toolbar, Typography, styled } from '@mui/material';
+import React from 'react';
+import { prefixAssetImagesUrl } from '../helpers/prefixAssetsUrl';
 import theme from '../helpers/theme';
 
 const SiteHeader = styled(AppBar)`
@@ -8,10 +9,11 @@ const SiteHeader = styled(AppBar)`
 `;
 
 export const SiteHeaderWithData = () => {
+
   return (
     <SiteHeader position="sticky">
       <Toolbar sx={{justifyContent: 'space-between'}}>
-        <Typography color="black">Facebook</Typography>
+        <img src={prefixAssetImagesUrl("logo.svg")} />
         <Typography color="black">Search Facebook</Typography>
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
           <Typography color="black">Messenger</Typography>

@@ -1,6 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
+const CopyPlugin = require("copy-webpack-plugin");
  
 module.exports = {
   name: 'client',
@@ -28,5 +29,13 @@ module.exports = {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin(), new WebpackManifestPlugin()],
+  plugins: [new CleanWebpackPlugin(), new WebpackManifestPlugin(), new CopyPlugin({
+    patterns: [
+      {
+        context: path.join(__dirname, "assets"),
+        from: ".",
+        to: "assets",
+      },
+    ],
+  }),],
 }
