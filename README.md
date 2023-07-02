@@ -32,3 +32,7 @@ The project uses Cognito for authentication. The infra script spins up a cognito
 ## Database Backend
 
 Currently, the project does not have a database backend implemented. However, it is intended to include a PostgreSQL database. 
+
+## Resources
+
+[Trello](https://trello.com/b/3kBkMeTG/g-book)
