@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
     <>
       <SiteHeaderWithData />
       <HomePageContainer>
-        <div>Home Page</div>
+        
       </HomePageContainer>
     </>
   );
