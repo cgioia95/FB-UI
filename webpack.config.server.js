@@ -1,6 +1,7 @@
 const nodeExternals = require('webpack-node-externals')
 const path = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
+const Dotenv = require("dotenv-webpack");
 
 
 module.exports = {
@@ -11,7 +12,8 @@ module.exports = {
     mode: 'production',
     plugins: [new CopyPlugin({
         patterns: [{ context: 'server', from: 'views', to: 'views' }],
-    }),
+    }), 
+    new Dotenv({expand: true}),
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
