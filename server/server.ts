@@ -4,7 +4,6 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import { renderServerApp } from './helpers/render';
-
  
 const server = express()
  

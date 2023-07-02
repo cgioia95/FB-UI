@@ -1,8 +1,24 @@
-const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
- 
+const Dotenv = require("dotenv-webpack");
+
+const plugins = [
+  new CleanWebpackPlugin(),
+  new WebpackManifestPlugin(),
+  new CopyPlugin({
+    patterns: [
+      {
+        context: path.join(__dirname, "assets"),
+        from: ".",
+        to: "assets",
+      },
+    ],
+  }),
+  new Dotenv(),
+];
+
 module.exports = {
   name: 'client',
   entry: {
@@ -16,6 +32,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
+    fallback: {
+      path: false,
+      os: false,
+      crypto: false,
+    },
   },
   target: 'web',
   module: {
@@ -29,13 +50,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin(), new WebpackManifestPlugin(), new CopyPlugin({
-    patterns: [
-      {
-        context: path.join(__dirname, "assets"),
-        from: ".",
-        to: "assets",
-      },
-    ],
-  }),],
-}
+  plugins,
+};

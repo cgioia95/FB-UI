@@ -9,7 +9,10 @@
     "build:all": "npm run build:server && npm run build:client",
     "start": "node ./dist/server.js",
     "dev": "node ./dev.js",
-    "deploy": "./infra/deploy/deploy.sh"
+    "infra:deploy": "./infra/deploy/deploy.sh",
+    "infra:init:plan": "terraform -chdir=infra/init plan",
+    "infra:init:apply": "terraform -chdir=infra/init apply",
+    "infra:init:destroy": "terraform -chdir=infra/init destroy"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   },
   "homepage": "https://github.com/cgioia95/FB-UI#readme",
   "devDependencies": {
+    "@types/dotenv-webpack": "^7.0.4",
     "@types/express": "^4.17.17",
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
@@ -38,13 +42,16 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^5.0.3",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.6",
     "@mui/styled-engine-sc": "^5.12.0",
     "@mui/system": "^5.13.6",
+    "aws-amplify": "^5.3.3",
     "dotenv": "^16.3.1",
+    "dotenv-webpack": "^8.0.1",
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
