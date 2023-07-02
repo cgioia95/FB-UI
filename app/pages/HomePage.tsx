@@ -1,24 +1,31 @@
 import { Paper } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import React, { ReactNode } from 'react';
-import { useTheme } from '@mui/material/styles';
+import { SiteHeaderWithData } from '../containers/SiteHeader';
+import theme from '../helpers/theme';
 
 interface HomePageContainerProps {
   children: ReactNode;
 }
 
+const StyledPaper = styled(Paper)`
+  height: 100vh;
+  background-color: ${theme.palette.secondary.main};
+`;
+
+
 const HomePageContainer: React.FC<HomePageContainerProps> = ({ children }) => {
-  const theme = useTheme()
   return (
-    <Paper elevation={0} style={{ height: '100vh', backgroundColor: theme.palette.background.default }}>
+    <StyledPaper elevation={0}>
       {children}
-    </Paper>
+    </StyledPaper>
   );
 };
 
 const HomePage: React.FC = () => {
   return (
     <>
-      <div>SITE HEADER</div>
+      <SiteHeaderWithData />
       <HomePageContainer>
         <div>Home Page</div>
       </HomePageContainer>
