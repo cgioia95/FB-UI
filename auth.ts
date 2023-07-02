@@ -4,6 +4,7 @@ const AwsAuthConfgi = {
   aws_cognito_region: 'ap-southeast-2',
   aws_user_pools_id: 'ap-southeast-2_wGPaYtOaX	',
   aws_user_pools_web_client_id: '14akmr1laj31gfhllub915d8cv',
+  authenticationFlowType: 'USER_SRP_AUTH',
 };
 
 export default AwsAuthConfgi;

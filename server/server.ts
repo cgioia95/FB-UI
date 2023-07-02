@@ -4,8 +4,6 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import { renderServerApp } from './helpers/render';
-import Amplify from '../amplify-config'; // Import the Amplify configuration file
-
  
 const server = express()
  

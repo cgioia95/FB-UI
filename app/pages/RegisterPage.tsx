@@ -1,18 +1,21 @@
-import { Auth } from 'aws-amplify';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
 
-export const LoginPage = () => {
+export const RegisterPage = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+    const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            await Auth.signIn({
+            await Auth.signUp({
                 username: email,
                 password: password,
+                attributes: {
+                    email: email
+                }
             });
 
             navigate('/');
@@ -31,12 +34,12 @@ export const LoginPage = () => {
 
     return (
         <div>
-            <div>LOGIN SCREEN</div>
+            <div>REGISTER SCREEN</div>
 
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleRegister}>
                 <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
                 <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
-                <button type="submit">Login</button>
+                <button type="submit">Register</button>
             </form>
         </div>
     );
