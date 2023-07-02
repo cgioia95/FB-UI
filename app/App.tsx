@@ -1,10 +1,9 @@
 // client/App.tsx
+import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 import React from 'react';
-import { AppRouter } from './containers/Router';
 import theme from './helpers/theme';
-import { CssBaseline } from '@mui/material';
-
+import { AppRouter } from './containers/Router/Router';
 
 
 const App: React.FC = () => {

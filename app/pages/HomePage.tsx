@@ -1,7 +1,7 @@
 import { Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React, { ReactNode } from 'react';
-import { SiteHeaderWithData } from '../containers/SiteHeader';
+import { SiteHeaderWithData } from '../components/SiteHeader/SiteHeader';
 import theme from '../helpers/theme';
 
 interface HomePageContainerProps {
