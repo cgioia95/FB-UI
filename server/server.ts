@@ -1,10 +1,8 @@
 // server/server.ts
-import express from 'express'
-import fs from 'fs'
-import path from 'path'
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
-import { App } from '../client/components/App'
+import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import { renderServerApp } from './helpers/render';
 
  
 const server = express()
@@ -20,8 +18,11 @@ const manifest = fs.readFileSync(
 )
 const assets = JSON.parse(manifest)
  
-server.get('/', (req, res) => {
-  const component = ReactDOMServer.renderToString(React.createElement(App))
+server.get('/*', (req, res) => {
+
+  const component = renderServerApp(req.url);
+
+
   res.render('client', { assets, component })
 })
  
