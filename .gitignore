@@ -1,3 +1,36 @@
 node_modules/
 *.env
 dist/
+
+# Terraform files
+.terraform/
+.terraform.lcok.hcl
+.terraform
+*.tfstate
+*.tfstate.backup
+*.tfplan
+.terraform/
+terraform.tfvars
+
+# Ignore override files as they are usually environment-specific
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore .terraform.lock.hcl file as it is used by Terraform to track provider versions
+.terraform.lock.hcl
+
+# Ignore crash log files
+crash.log
+
+# Ignore any .tfvars files that may contain sensitive information
+*.auto.tfvars
+*.auto.tfvars.json
+*.tfvars.json
+*.tfvars
+
+# Ignore CLI configuration file
+.terraformrc
+terraform.rc
+terraform/terraform-provider*

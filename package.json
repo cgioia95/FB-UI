@@ -8,7 +8,8 @@
     "build:client": "webpack --config webpack.config.client.js",
     "build:all": "npm run build:server && npm run build:client",
     "start": "node ./dist/server.js",
-    "dev": "node ./dev.js"
+    "dev": "node ./dev.js",
+    "deploy": "./infra/deploy/deploy.sh"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "cross-spawn": "^7.0.3",
     "ts-loader": "^9.4.4",
