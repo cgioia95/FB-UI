@@ -1,12 +1,13 @@
+import { Amplify } from 'aws-amplify';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import App from '../../app/App';
-import { Amplify } from 'aws-amplify';
 
 
 export function renderServerApp(url: string) {
 
+  // eslint-disable-next-line
   //@ts-ignore
   Amplify.configure({
     aws_project_region: 'ap-southeast-2',

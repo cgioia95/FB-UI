@@ -7,12 +7,13 @@
     "build:server": "webpack --config webpack.config.server.js",
     "build:client": "webpack --config webpack.config.client.js",
     "build:all": "npm run build:server && npm run build:client",
-    "start": "node ./dist/server.js",
+    "start": "node ./dist/server/server.js",
     "dev": "node ./dev.js",
     "infra:deploy": "./infra/deploy/deploy.sh",
     "infra:init:plan": "terraform -chdir=infra/init plan",
     "infra:init:apply": "terraform -chdir=infra/init apply",
-    "infra:init:destroy": "terraform -chdir=infra/init destroy"
+    "infra:init:destroy": "terraform -chdir=infra/init destroy",
+    "lint": "eslint src --cache --fix"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,11 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "cross-spawn": "^7.0.3",
+    "eslint": "^8.44.0",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
     "webpack": "^5.88.1",

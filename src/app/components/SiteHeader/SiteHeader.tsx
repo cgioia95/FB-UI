@@ -3,7 +3,7 @@ import { Chat as ChatIcon, NotificationsNone as NotificationsNoneIcon } from '@m
 import React from 'react';
 import SiteHeaderSearchBar from '../../containers/SiteHeaderSearchBar/SiteHeaderSearchBar';
 import { prefixAssetImagesUrl } from '../../helpers/prefixAssetsUrl';
-import theme, { colours } from '../../helpers/theme';
+import theme from '../../helpers/theme';
 
 const SiteHeader = styled(AppBar)`
   height: 56px;
