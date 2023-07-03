@@ -1,6 +1,8 @@
+import { Auth } from 'aws-amplify';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Auth } from 'aws-amplify';
+import { CentredContainer } from '../components/lib/CentredContainer';
+import { PageContainer } from './helpers/PageContainer';
 
 export const RegisterPage = () => {
     const navigate = useNavigate();
@@ -33,14 +35,21 @@ export const RegisterPage = () => {
     };
 
     return (
-        <div>
-            <div>REGISTER SCREEN</div>
 
-            <form onSubmit={handleRegister}>
-                <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
-                <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
-                <button type="submit">Register</button>
-            </form>
-        </div>
+
+        <PageContainer >
+            <CentredContainer>
+
+                <div>
+                    <div>REGISTER SCREEN</div>
+
+                    <form onSubmit={handleRegister}>
+                        <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
+                        <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </CentredContainer>
+        </PageContainer>
     );
 };

@@ -1,0 +1,30 @@
+/* CSS Reset or Normalize */
+/* ... */
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Global Styles */
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Layout Container */
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  
+  /* Component Styling */
+  /* Define styles for your React components here */
+  
