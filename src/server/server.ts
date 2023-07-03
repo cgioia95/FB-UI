@@ -1,5 +1,4 @@
-// server/server.ts
-import 'dotenv/config'
+import 'dotenv/config';
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
@@ -8,12 +7,14 @@ import { renderServerApp } from './helpers/render';
 const server = express()
  
 server.set('view engine', 'ejs')
+console.log("DIRECTORY NAME")
+console.log(__dirname)
 server.set('views', path.join(__dirname, 'views'))
  
-server.use('/', express.static(path.join(__dirname, 'static')))
+server.use('/', express.static(path.join(__dirname, '../static')))
  
 const manifest = fs.readFileSync(
-  path.join(__dirname, 'static/manifest.json'),
+  path.join(__dirname, '../static/manifest.json'),
   'utf-8'
 )
 const assets = JSON.parse(manifest)

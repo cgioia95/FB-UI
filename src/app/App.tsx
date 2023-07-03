@@ -4,8 +4,6 @@ import { ThemeProvider } from '@mui/system';
 import React from 'react';
 import theme from './helpers/theme';
 import { AppRouter } from './containers/Router/Router';
-import { Authenticator } from '@aws-amplify/ui-react';
-
 
 const App: React.FC = () => {
   return (

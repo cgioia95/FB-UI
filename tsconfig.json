@@ -1,5 +1,5 @@
 {
-    "include": ["client"],
+    "include": ["src/**/*"],
     "compilerOptions": {
       "module": "es6", // generate ES modules
       "target": "es5", // target ES5 API

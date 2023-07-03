@@ -7,16 +7,16 @@ const Dotenv = require("dotenv-webpack");
 module.exports = {
     name: 'server',
     entry: {
-        server: path.resolve(__dirname, 'server/server.ts'),
+        server: path.resolve(__dirname, 'src/server/server.ts'),
     },
     mode: 'production',
     plugins: [new CopyPlugin({
-        patterns: [{ context: 'server', from: 'views', to: 'views' }],
+        patterns: [{ context: 'src/server', from: 'views', to: 'views' }],
     }), 
     new Dotenv({expand: true}),
     ],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist/server'),
         filename: '[name].js',
     },
     resolve: {
@@ -30,12 +30,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.(tsx|ts)?$/,
                 loader: 'ts-loader',
                 options: {
-                    configFile: 'tsconfig.server.json',
+                    configFile: 'src/server/tsconfig.json',
                 },
             },
         ],
-    },
+    },    
 }

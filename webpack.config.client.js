@@ -22,7 +22,7 @@ const plugins = [
 module.exports = {
   name: 'client',
   entry: {
-    client: path.resolve(__dirname, 'client/client.tsx'),
+    client: path.resolve(__dirname, 'src/client/client.tsx'),
   },
   mode: 'production',
   output: {
@@ -42,10 +42,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(tsx|ts)?$/,
         loader: 'ts-loader',
         options: {
-          configFile: 'tsconfig.client.json',
+          configFile: 'tsconfig.json',
         },
       },
     ],

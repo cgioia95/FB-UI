@@ -8,6 +8,7 @@ import { getEnv } from '../app/helpers/getEnv';
 
   const {AWS_REGION, AWS_COGNITO_IDENTITY_POOL_ID, AWS_USER_POOLS_ID, AWS_USER_POOLS_WEB_CLIENT_ID} = getEnv()
 
+  // eslint-disable-next-line
   //@ts-ignore
   Amplify.configure({
     aws_project_region: AWS_REGION,
